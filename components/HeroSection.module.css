@@ -42,17 +42,39 @@
 }
 
 .badge {
-  display: inline-block;
-  padding: 8px 20px;
-  background: rgba(194, 22, 22, 0.15);
-  border: 1px solid rgba(194, 22, 22, 0.3);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 28px;
+  background: var(--accent);
   border-radius: 50px;
-  color: var(--secondary);
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 1px;
+  color: var(--primary);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
   margin-bottom: 32px;
+  box-shadow: 0 4px 20px rgba(200, 158, 43, 0.4);
+  animation: badgePulse 2s ease-in-out infinite;
+}
+
+.badge::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background: var(--primary);
+  border-radius: 50%;
+  animation: dotPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes badgePulse {
+  0%, 100% { box-shadow: 0 4px 20px rgba(200, 158, 43, 0.4); }
+  50% { box-shadow: 0 4px 30px rgba(200, 158, 43, 0.7); }
+}
+
+@keyframes dotPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.5); opacity: 0.7; }
 }
 
 .title {
