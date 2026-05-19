@@ -78,7 +78,7 @@
 .icon {
   width: 64px;
   height: 64px;
-  background: rgba(245, 166, 35, 0.1);
+  background: rgba(230, 57, 70, 0.1);
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -132,7 +132,7 @@
 
 .cta:hover {
   gap: 12px;
-  color: #e09513;
+  color: #c1121f;
 }
 
 @media (max-width: 968px) {

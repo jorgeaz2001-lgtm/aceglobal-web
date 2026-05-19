@@ -6,7 +6,7 @@
   z-index: 1000;
   background: rgba(10, 25, 47, 0.95);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   transition: var(--transition);
 }
 
@@ -40,8 +40,10 @@
   letter-spacing: 0.5px;
 }
 
-.logoText span {
+.logoSub {
   color: var(--secondary);
+  font-weight: 400;
+  font-style: italic;
 }
 
 .nav {
@@ -91,7 +93,7 @@
 }
 
 .cta:hover {
-  background: #e09513;
+  background: #c1121f;
   transform: translateY(-2px);
 }
 

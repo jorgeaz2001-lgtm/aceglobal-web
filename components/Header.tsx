@@ -13,7 +13,7 @@ export default function Header() {
         <Link href="/" className={styles.logo}>
           <img src="/images/logo.png" alt="Ace Global Solutions" />
           <span className={styles.logoText}>
-            ACE <span>GLOBAL</span>
+            ACE GLOBAL <span className={styles.logoSub}>solutions</span>
           </span>
         </Link>
 
