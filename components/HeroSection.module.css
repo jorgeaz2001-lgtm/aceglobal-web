@@ -4,37 +4,24 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--primary);
+  background: var(--bg);
   overflow: hidden;
   padding-top: 80px;
 }
 
-.video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  transform: translate(-50%, -50%);
-  object-fit: cover;
-  z-index: 1;
-}
-
-.overlay {
+.hero::before {
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(10, 10, 10, 0.7);
-  z-index: 2;
+  background: radial-gradient(circle at top right, rgba(230, 57, 70, 0.04) 0%, transparent 50%);
 }
 
 .content {
   position: relative;
-  z-index: 3;
+  z-index: 2;
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 24px;
@@ -44,8 +31,8 @@
 .badge {
   display: inline-block;
   padding: 8px 20px;
-  background: rgba(230, 57, 70, 0.15);
-  border: 1px solid rgba(230, 57, 70, 0.3);
+  background: rgba(230, 57, 70, 0.08);
+  border: 1px solid rgba(230, 57, 70, 0.2);
   border-radius: 50px;
   color: var(--secondary);
   font-size: 0.85rem;
@@ -59,7 +46,7 @@
   font-family: 'Playfair Display', serif;
   font-size: clamp(2.5rem, 6vw, 4.5rem);
   font-weight: 700;
-  color: var(--white);
+  color: var(--primary);
   line-height: 1.15;
   margin-bottom: 24px;
 }
@@ -70,7 +57,7 @@
 
 .subtitle {
   font-size: clamp(1.1rem, 2.5vw, 1.35rem);
-  color: var(--text-light);
+  color: var(--text);
   max-width: 700px;
   margin: 0 auto 40px;
   line-height: 1.7;
@@ -85,7 +72,7 @@
 
 .primaryBtn {
   background: var(--secondary);
-  color: var(--primary);
+  color: var(--white);
   padding: 16px 36px;
   border-radius: 4px;
   font-size: 1rem;
@@ -97,12 +84,12 @@
 .primaryBtn:hover {
   background: #c1121f;
   transform: translateY(-3px);
-  box-shadow: 0 10px 30px rgba(230, 57, 70, 0.3);
+  box-shadow: 0 10px 30px rgba(230, 57, 70, 0.25);
 }
 
 .secondaryBtn {
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  color: var(--white);
+  border: 1px solid var(--primary);
+  color: var(--primary);
   padding: 16px 36px;
   border-radius: 4px;
   font-size: 1rem;
@@ -112,8 +99,8 @@
 }
 
 .secondaryBtn:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: var(--white);
+  background: var(--primary);
+  color: var(--white);
 }
 
 .scrollIndicator {
