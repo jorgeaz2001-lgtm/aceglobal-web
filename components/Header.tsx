@@ -21,9 +21,6 @@ export default function Header() {
       <div className={styles.container}>
         <Link href="/" className={styles.logo}>
           <img src="/images/logo.png" alt="Ace Global Solutions" />
-          <span className={styles.logoText}>
-            ACE GLOBAL <span className={styles.logoSub}>solutions</span>
-          </span>
         </Link>
 
         <nav className={styles.nav}>

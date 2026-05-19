@@ -73,7 +73,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(230, 57, 70, 0.03) 0%, transparent 60%);
+  background: linear-gradient(135deg, rgba(194, 22, 22, 0.03) 0%, transparent 60%);
   opacity: 0;
   transition: opacity 0.4s ease;
 }
@@ -94,7 +94,7 @@
 .icon {
   width: 64px;
   height: 64px;
-  background: rgba(230, 57, 70, 0.1);
+  background: rgba(194, 22, 22, 0.1);
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -176,7 +176,7 @@
 
 .cta:hover {
   gap: 12px;
-  color: #c1121f;
+  color: #9a1111;
 }
 
 @media (max-width: 968px) {
