@@ -1,4 +1,5 @@
 import AnimatedSection from "./AnimatedSection";
+import CountUp from "./CountUp";
 import styles from "./AboutSection.module.css";
 
 export default function AboutSection() {
@@ -43,15 +44,15 @@ export default function AboutSection() {
 
             <div className={styles.values}>
               <div className={styles.value}>
-                <h4>10+</h4>
+                <h4><CountUp end={10} suffix="+" /></h4>
                 <p>Años de experiencia</p>
               </div>
               <div className={styles.value}>
-                <h4>50+</h4>
+                <h4><CountUp end={50} suffix="+" /></h4>
                 <p>Proyectos exitosos</p>
               </div>
               <div className={styles.value}>
-                <h4>3</h4>
+                <h4><CountUp end={3} /></h4>
                 <p>Sectores líderes</p>
               </div>
             </div>

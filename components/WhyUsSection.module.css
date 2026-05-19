@@ -67,11 +67,30 @@
   padding: 40px 28px;
   text-align: center;
   transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--secondary);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
 }
 
 .card:hover {
   border-color: rgba(230, 57, 70, 0.3);
   transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.card:hover::before {
+  transform: scaleX(1);
 }
 
 .icon {
@@ -84,6 +103,13 @@
   justify-content: center;
   margin: 0 auto 24px;
   color: var(--secondary);
+  transition: var(--transition);
+}
+
+.card:hover .icon {
+  transform: scale(1.15) rotate(5deg);
+  background: var(--secondary);
+  color: var(--white);
 }
 
 .card h3 {
@@ -106,12 +132,32 @@
   background: var(--primary-light);
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(230, 57, 70, 0.08) 0%, transparent 70%);
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.1); opacity: 1; }
 }
 
 .cta h3 {
   font-family: 'Playfair Display', serif;
   font-size: 2rem;
   margin-bottom: 16px;
+  position: relative;
+  z-index: 2;
 }
 
 .cta p {
@@ -120,23 +166,27 @@
   max-width: 500px;
   margin-left: auto;
   margin-right: auto;
+  position: relative;
+  z-index: 2;
 }
 
 .btn {
   background: var(--secondary);
-  color: var(--primary);
+  color: var(--white);
   padding: 16px 40px;
   border-radius: 4px;
   font-size: 1rem;
   font-weight: 600;
   transition: var(--transition);
   display: inline-block;
+  position: relative;
+  z-index: 2;
 }
 
 .btn:hover {
   background: #c1121f;
   transform: translateY(-3px);
-  box-shadow: 0 10px 30px rgba(230, 57, 70, 0.2);
+  box-shadow: 0 10px 30px rgba(230, 57, 70, 0.25);
 }
 
 @media (max-width: 968px) {

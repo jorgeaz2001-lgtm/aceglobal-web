@@ -18,6 +18,11 @@
   align-items: center;
   justify-content: space-between;
   height: 80px;
+  transition: height 0.3s ease;
+}
+
+.scrolled .container {
+  height: 70px;
 }
 
 .logo {
@@ -113,6 +118,18 @@
   height: 2px;
   background: var(--white);
   transition: var(--transition);
+}
+
+.menuBtn span.open:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menuBtn span.open:nth-child(2) {
+  opacity: 0;
+}
+
+.menuBtn span.open:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
 }
 
 .mobileNav {
