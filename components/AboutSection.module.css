@@ -117,12 +117,17 @@
     gap: 50px;
   }
 
-  .imageWrapper::before {
-    display: none;
+  .imageWrapper {
+    order: 2;
   }
 
   .content {
+    order: 1;
     max-width: 100%;
+  }
+
+  .imageWrapper::before {
+    display: none;
   }
 
   .values {
