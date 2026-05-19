@@ -1,0 +1,126 @@
+.footer {
+  background: var(--primary);
+  color: var(--white);
+  padding: 80px 0 30px;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+  gap: 60px;
+  margin-bottom: 60px;
+}
+
+.brand img {
+  height: 60px;
+  width: auto;
+  filter: brightness(0) invert(1);
+  margin-bottom: 20px;
+}
+
+.brand p {
+  color: var(--text-light);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.socials {
+  display: flex;
+  gap: 16px;
+}
+
+.socials a {
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.socials a:hover {
+  background: var(--secondary);
+  border-color: var(--secondary);
+  color: var(--primary);
+}
+
+.column h4 {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 24px;
+  color: var(--secondary);
+}
+
+.column ul {
+  list-style: none;
+}
+
+.column li {
+  margin-bottom: 14px;
+}
+
+.column a {
+  color: var(--text-light);
+  font-size: 0.95rem;
+  transition: var(--transition);
+}
+
+.column a:hover {
+  color: var(--secondary);
+  padding-left: 4px;
+}
+
+.contact p {
+  color: var(--text-light);
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.bottom p {
+  color: var(--text-light);
+  font-size: 0.85rem;
+}
+
+@media (max-width: 968px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}

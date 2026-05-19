@@ -1,0 +1,157 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(10, 25, 47, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: var(--transition);
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo img {
+  height: 50px;
+  width: auto;
+  filter: brightness(0) invert(1);
+}
+
+.logoText {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 0.5px;
+}
+
+.logoText span {
+  color: var(--secondary);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.nav a {
+  color: var(--white);
+  font-size: 0.95rem;
+  font-weight: 500;
+  position: relative;
+  padding: 8px 0;
+  transition: var(--transition);
+}
+
+.nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--secondary);
+  transition: width 0.3s ease;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+.nav a:hover {
+  color: var(--secondary);
+}
+
+.cta {
+  background: var(--secondary);
+  color: var(--primary) !important;
+  padding: 10px 24px !important;
+  border-radius: 4px;
+  font-weight: 600 !important;
+}
+
+.cta::after {
+  display: none !important;
+}
+
+.cta:hover {
+  background: #e09513;
+  transform: translateY(-2px);
+}
+
+.menuBtn {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.menuBtn span {
+  display: block;
+  width: 28px;
+  height: 2px;
+  background: var(--white);
+  transition: var(--transition);
+}
+
+.mobileNav {
+  display: none;
+  position: absolute;
+  top: 80px;
+  left: 0;
+  right: 0;
+  background: var(--primary);
+  flex-direction: column;
+  padding: 24px;
+  gap: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.mobileNav a {
+  color: var(--white);
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.open {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+  }
+
+  .menuBtn {
+    display: flex;
+  }
+
+  .logo img {
+    height: 40px;
+  }
+
+  .logoText {
+    font-size: 1rem;
+  }
+}
