@@ -8,13 +8,16 @@ export default function AboutSection() {
         <div className={styles.grid}>
           <AnimatedSection className={styles.imageWrapper}>
             <div className={styles.image}>
-              <div className={styles.placeholder}>
-                <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#8892b0" strokeWidth="1">
-                  <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
-                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
-                </svg>
-                <p style={{ marginTop: 16 }}>Imagen corporativa<br/>de la empresa</p>
-              </div>
+              <video
+                className={styles.video}
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="auto"
+              >
+                <source src="/videos/about.mp4" type="video/mp4" />
+              </video>
             </div>
           </AnimatedSection>
 
