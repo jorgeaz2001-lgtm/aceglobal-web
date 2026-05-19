@@ -1,18 +1,10 @@
 "use client";
 
-import { useState } from "react";
 import { motion } from "framer-motion";
 import AnimatedSection from "./AnimatedSection";
 import styles from "./ContactSection.module.css";
 
 export default function ContactSection() {
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-  };
-
   return (
     <section className={styles.contact} id="contacto">
       <div className={styles.container}>
@@ -22,7 +14,7 @@ export default function ContactSection() {
             <h2 className={styles.title}>Hablemos de tu proyecto</h2>
             <p className={styles.text}>
               Estamos listos para escucharte y diseñar una estrategia a la medida de tus necesidades. 
-              Completa el formulario y nos pondremos en contacto contigo en menos de 24 horas.
+              Escríbenos y nos pondremos en contacto contigo en menos de 24 horas.
             </p>
 
             <div className={styles.details}>
@@ -80,81 +72,28 @@ export default function ContactSection() {
 
           <AnimatedSection delay={0.2}>
             <motion.div 
-              className={styles.form}
+              className={styles.ctaBox}
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              {submitted ? (
-                <motion.div 
-                  className={styles.success}
-                  initial={{ scale: 0.8, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  transition={{ type: "spring", stiffness: 200 }}
-                >
-                  <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#c21616" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-                    <polyline points="22 4 12 14.01 9 11.01"/>
-                  </svg>
-                  <h3>¡Mensaje enviado!</h3>
-                  <p>Gracias por contactarnos. Te responderemos en menos de 24 horas.</p>
-                </motion.div>
-              ) : (
-                <>
-                  <h3>Envíanos un mensaje</h3>
-                  <form onSubmit={handleSubmit}>
-                    <div className={styles.row}>
-                      <motion.div 
-                        className={styles.group}
-                        whileFocus={{ scale: 1.02 }}
-                      >
-                        <label htmlFor="name">Nombre</label>
-                        <input type="text" id="name" name="name" required placeholder="Tu nombre" />
-                      </motion.div>
-                      <motion.div 
-                        className={styles.group}
-                        whileFocus={{ scale: 1.02 }}
-                      >
-                        <label htmlFor="email">Email</label>
-                        <input type="email" id="email" name="email" required placeholder="tu@email.com" />
-                      </motion.div>
-                    </div>
-                    <div className={styles.row}>
-                      <div className={styles.group}>
-                        <label htmlFor="company">Empresa</label>
-                        <input type="text" id="company" name="company" placeholder="Nombre de tu empresa" />
-                      </div>
-                      <div className={styles.group}>
-                        <label htmlFor="phone">Teléfono</label>
-                        <input type="tel" id="phone" name="phone" placeholder="Tu teléfono" />
-                      </div>
-                    </div>
-                    <div className={styles.group}>
-                      <label htmlFor="service">Servicio de interés</label>
-                      <select id="service" name="service" defaultValue="">
-                        <option value="" disabled>Selecciona un servicio</option>
-                        <option value="marketing">Marketing Industrial</option>
-                        <option value="comercio">Comercio Exterior</option>
-                        <option value="ambos">Ambos</option>
-                        <option value="otro">Otro</option>
-                      </select>
-                    </div>
-                    <div className={styles.group}>
-                      <label htmlFor="message">Mensaje</label>
-                      <textarea id="message" name="message" required placeholder="Cuéntanos sobre tu proyecto..."></textarea>
-                    </div>
-                    <motion.button 
-                      type="submit" 
-                      className={styles.submitBtn}
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                    >
-                      Enviar mensaje
-                    </motion.button>
-                  </form>
-                </>
-              )}
+              <h3>Envíanos un mensaje</h3>
+              <p>
+                Cuéntanos sobre tu proyecto, necesidades o preguntas. 
+                Estamos aquí para ayudarte a crecer.
+              </p>
+              <a 
+                href="mailto:bsantos@aceglobal.mx?subject=SOLICITUD%20DE%20INFORMACION" 
+                className={styles.emailBtn}
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
+                Enviar mensaje
+              </a>
+              <span className={styles.note}>Se abrirá tu aplicación de correo</span>
             </motion.div>
           </AnimatedSection>
         </div>
